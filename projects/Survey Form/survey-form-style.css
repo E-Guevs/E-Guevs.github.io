@@ -1,0 +1,241 @@
+@import url(https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap);
+
+:root {
+  --color-white: rgb(245 245 245);
+  --color-green1: rgba(8, 43, 40, 0.9);
+  --color-green2: rgba(22, 94, 90, 0.8);
+  --color-green2s: rgb(22 94 90);
+  --color-green3: rgba(27, 123, 115, 0.8);
+  --color-gray: rgb(170 170 180);
+  --color-black: rgb(20 20 20);
+  --color-darkgray: rgb(50 50 50);
+
+  --font-size-header: 1rem;
+  --font-size-body: 1.05rem;
+
+  --margin-item: 0.875em;
+  --margin-question-only: 0.25em;
+  --padding-form: 1.5em;
+  --min-width: 320px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Ubuntu, Arial, Sans-Serif;
+  font-size: var(--font-size-header);
+  color: var(--color-white);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      45deg,
+      var(--color-green2),
+      var(--color-green3)
+    ),
+    url(Martial-Arts.jpg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  width: 95%;
+  min-width: var(--min-width);
+  margin: 0 auto;
+}
+
+#title {
+  margin: 0.75em auto 0 auto;
+}
+#formtype {
+  margin: 0 auto 0 auto;
+}
+#description {
+  margin: 0.25em auto 2em auto;
+}
+
+#survey-form {
+  overflow: hidden;
+  background-color: var(--color-green1);
+  margin: 0 auto 2em auto;
+  padding: var(--padding-form);
+  width: 100%;
+  min-width: var(--min-width);
+  border-radius: 0.625rem;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.column {
+  display: grid;
+}
+
+label {
+  display: block;
+  margin-bottom: var(--margin-question-only);
+}
+
+#name-label,
+#number-label,
+#email-label,
+.dd,
+.question {
+  margin-top: 0;
+  margin-bottom: var(--margin-item);
+  font-size: var(--font-size-body);
+}
+
+input,
+textarea,
+select,
+#submit {
+  background-color: var(--color-green2s);
+  margin: 0.625em 0 0 0;
+  padding: 0.3em;
+  width: 100%;
+  min-height: 0.75em;
+  font-size: var(--font-size-body);
+  color: var(--color-white);
+  border: none;
+  border-radius: 0.5rem;
+  resize: none;
+}
+
+.optn {
+  color: var(--color-white) !important;
+}
+
+::placeholder {
+  color: var(--color-gray);
+}
+#dropdown:invalid,
+#dropdown2:invalid {
+  color: var(--color-gray);
+}
+
+.choices {
+  display: inline-block;
+  margin: 0;
+}
+
+.choices:hover {
+  cursor: pointer;
+}
+
+.tick {
+  width: var(--font-size-body);
+  margin: 0 0.1em 0 0;
+  vertical-align: middle;
+  accent-color: var(--color-green3);
+}
+
+.tick:hover {
+  cursor: pointer;
+}
+
+#submit {
+  background-color: var(--color-black);
+  height: 2em;
+  margin: 0.45em auto 0 auto;
+  transition: 0.125s;
+}
+
+#submit:hover,
+#submit:active {
+  cursor: pointer;
+  background-color: var(--color-darkgray);
+}
+
+@media (min-width: 540px) {
+  header {
+    width: 100%;
+  }
+  #survey-form {
+    width: 90%;
+  }
+
+  .column {
+    grid-template-columns: 19fr 20fr;
+    grid-gap: 1em;
+  }
+}
+
+@media (min-width: 700px) {
+  :root {
+    --font-size-header: 1.25rem;
+    --font-size-body: 1.3125rem;
+
+    --margin-item: 1.1em;
+    --margin-question-only: 0.5em;
+    --padding-form: 2.5em;
+  }
+
+  body {
+    font-size: var(--font-size-header);
+  }
+  #title {
+    margin: 1em auto 0 auto;
+  }
+  #formtype {
+    margin: 0.25em auto 0.25em auto;
+  }
+  #description {
+    margin: 0.5em auto 2.25em auto;
+  }
+
+  #survey-form {
+    margin-bottom: 2.5em;
+    padding: var(--padding-form);
+    max-width: 850px;
+  }
+
+  label {
+    margin-bottom: var(--margin-question-only);
+  }
+
+  #name-label,
+  #number-label,
+  #email-label,
+  .dd,
+  .question {
+    margin-bottom: var(--margin-item);
+    font-size: var(--font-size-body);
+  }
+
+  input,
+  textarea,
+  select,
+  #submit {
+    margin: 0.8em 0 0 0;
+    padding: 0.3em;
+    width: 100%;
+    font-size: var(--font-size-body);
+  }
+
+  .choices {
+    margin: 0 0 0.25em 0;
+  }
+
+  .tick {
+    width: var(--font-size-body);
+    margin: 0 0.15em 0 0;
+  }
+
+  #submit {
+    margin: 0.45em auto 0 auto;
+  }
+}

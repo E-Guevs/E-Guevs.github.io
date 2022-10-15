@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="survey-form-style.css" />
+    <title>The Combat Club | Survey Form</title>
+  </head>
+  <body>
+    <header>
+      <h1 id="title">The Combat Club</h1>
+      <h2 id="formtype">Survey Form</h2>
+      <p id="description">
+        <em
+          >Thanks for checking out our website!<br />This survey aims to help us
+          build the best training programs for you.</em
+        >
+      </p>
+    </header>
+    <form id="survey-form">
+      <label id="name-label"
+        >Name
+        <input
+          id="name"
+          type="text"
+          placeholder="Enter your full name"
+          required
+      /></label>
+      <label id="number-label"
+        >Age (Optional)
+        <input
+          id="number"
+          type="number"
+          min="5"
+          max="100"
+          placeholder="Enter your age (years)"
+      /></label>
+      <label id="email-label" data-error="Enter your email adress"
+        >Email Address
+        <input
+          id="email"
+          type="email"
+          placeholder="Enter your email address"
+          required
+      /></label>
+      <label class="dd"
+        >How did you know about us?
+        <select id="dropdown" required>
+          <option disabled selected hidden value="">Choose a platform</option>
+          <option class="optn">Facebook</option>
+          <option class="optn">YouTube</option>
+          <option class="optn">Google Ads</option>
+          <option class="optn">The Combat Club Forum</option>
+          <option class="optn">Others</option>
+        </select>
+      </label>
+      <div class="question">
+        <label
+          >Do you have a background in martial arts or combat sports?</label
+        >
+        <label class="choices"
+          ><input class="tick" name="yes-no" type="radio" value="yes" />
+          Yes</label
+        ><br />
+        <label class="choices"
+          ><input class="tick" name="yes-no" type="radio" value="no" />
+          No</label
+        ><br />
+      </div>
+      <div class="question">
+        <label
+          >What is your usual role (or role of interest) in training or
+          competition?</label
+        >
+        <label class="choices"
+          ><input class="tick" name="role" type="radio" value="striker" />
+          Striker</label
+        ><br />
+        <label class="choices"
+          ><input class="tick" name="role" type="radio" value="grappler" />
+          Grappler</label
+        ><br />
+      </div>
+      <div class="question">
+        <label
+          >What martial arts or combat sports do you have a background or
+          interest in?</label
+        >
+        <div class="column">
+          <div class="column1">
+            <label class="choices"
+              ><input
+                class="tick"
+                name="style"
+                type="checkbox"
+                value="karate" />
+              Karate</label
+            ><br />
+            <label class="choices"
+              ><input class="tick" name="style" type="checkbox" value="tkd" />
+              Taekwondo</label
+            ><br />
+            <label class="choices"
+              ><input class="tick" name="style" type="checkbox" value="judo" />
+              Judo</label
+            ><br />
+            <label class="choices"
+              ><input class="tick" name="style" type="checkbox" value="bjj" />
+              Brazilian Jiu-Jitsu</label
+            ><br />
+            <label class="choices"
+              ><input
+                class="tick"
+                name="style"
+                type="checkbox"
+                value="muay-thai" />
+              Muay Thai</label
+            ><br />
+          </div>
+          <div class="column2">
+            <label class="choices"
+              ><input
+                class="tick"
+                name="style"
+                type="checkbox"
+                value="boxing" />
+              Boxing</label
+            ><br />
+            <label class="choices"
+              ><input
+                class="tick"
+                name="style"
+                type="checkbox"
+                value="free-wrestling" />
+              Freestyle Wrestling</label
+            ><br />
+            <label class="choices"
+              ><input
+                class="tick"
+                name="style"
+                type="checkbox"
+                value="wing-chun" />
+              Wing Chun</label
+            ><br />
+            <label class="choices"
+              ><input class="tick" name="style" type="checkbox" value="jkd" />
+              Jeet Kune Do</label
+            ><br />
+            <label class="choices"
+              ><input
+                class="tick"
+                name="style"
+                type="checkbox"
+                value="krav-maga" />
+              Krav Maga</label
+            ><br />
+          </div>
+        </div>
+      </div>
+      <label class="dd"
+        >What is your purpose for combat training?
+        <select id="dropdown2" required>
+          <option disabled selected hidden value="">
+            Choose your training purpose
+          </option>
+          <option class="optn">Self-Defense</option>
+          <option class="optn">Competition</option>
+          <option class="optn">Military and Law Enforcement</option>
+          <option class="optn">Physical and Mental Fitness</option>
+        </select>
+      </label>
+      <div class="question">
+        <label
+          >What training programs do you think will complement your combat
+          training?</label
+        >
+        <label class="choices"
+          ><input
+            class="tick"
+            name="complementary"
+            type="checkbox"
+            value="strcond" />
+          Strength & Conditioning</label
+        ><br />
+        <label class="choices"
+          ><input
+            class="tick"
+            name="complementary"
+            type="checkbox"
+            value="crossfit" />
+          Crossfit</label
+        ><br />
+        <label class="choices"
+          ><input
+            class="tick"
+            name="complementary"
+            type="checkbox"
+            value="parkour" />
+          Parkour</label
+        ><br />
+        <label class="choices"
+          ><input
+            class="tick"
+            name="complementary"
+            type="checkbox"
+            value="yoga" />
+          Yoga</label
+        ><br />
+      </div>
+      <label class="question"
+        >We'd love to hear your comments and suggestions!
+        <textarea
+          name="comments"
+          rows="4"
+          placeholder="Type in your comment..."></textarea>
+      </label>
+      <button id="submit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
