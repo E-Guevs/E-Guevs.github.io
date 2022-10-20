@@ -164,11 +164,33 @@ p {
   user-select: none;
 }
 
+.nav-link a,
+.nav-link-mobile a {
+  position: relative;
+}
+
+.nav-link a::before,
+.nav-link-mobile a::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid var(--color-peach);
+  transform: scale(0);
+  transform-origin: bottom center;
+  transition: var(--transition);
+}
+
 .nav-link:hover,
 .nav-link-mobile:hover {
-  font-weight: bold;
-  color: var(--color-blue-solid);
-  background: ghostwhite;
+  color: var(--color-peach);
+}
+
+.nav-link:hover > a::before,
+.nav-link-mobile:hover > a::before {
+  transform: scale(1);
 }
 
 #nav-list-mobile {
