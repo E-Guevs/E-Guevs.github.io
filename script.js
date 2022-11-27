@@ -4,12 +4,12 @@ const websiteName = document.getElementById("website-name"),
   checkbox = document.getElementById("hamburger-checkbox"),
   navListMobile = document.getElementById("nav-list-mobile"),
   contents = document.querySelectorAll("#nav-list-mobile .nav-link-mobile a"),
-  sliders = document.querySelectorAll(".slider"),
-  contactSliders = document.querySelectorAll(".slider-contact"),
+  sliders = document.getElementsByClassName("slider"),
+  contactSliders = document.getElementsByClassName("slider-contact"),
   profileContainer = document.getElementById("profile-container"),
   aboutMe = document.getElementById("about-me"),
-  aboutMeParagraphs = document.querySelectorAll(".about-me-paragraph"),
-  projectTiles = document.querySelectorAll(".project-tile");
+  aboutMeParagraphs = document.getElementsByClassName("about-me-paragraph"),
+  projectTiles = document.getElementsByClassName("project-tile");
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~WEBSITE NAME~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -25,6 +25,29 @@ for (let content of contents)
     checkbox.checked = false;
     navListMobile.style.top = "-7.75rem";
   };
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~PROJECT TILE INTERACTION~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+for (let tile of projectTiles) {
+  function hoverTile() {
+    if (tile.getAttribute("class").includes("web-page"))
+      tile.firstElementChild.firstElementChild.style.transform = "scale(1)";
+    if (tile.getAttribute("class").includes("web-app"))
+      tile.firstElementChild.firstElementChild.style.transform = "scale(1.25)";
+  }
+
+  function unhoverTile() {
+    if (tile.getAttribute("class").includes("web-page"))
+      tile.firstElementChild.firstElementChild.style.transform = "scale(1.25)";
+    if (tile.getAttribute("class").includes("web-app"))
+      tile.firstElementChild.firstElementChild.style.transform = "scale(1)";
+  }
+
+  tile.addEventListener("pointerover", hoverTile);
+  tile.addEventListener("pointerout", unhoverTile);
+  tile.addEventListener("touchmove", hoverTile);
+  tile.addEventListener("touchend", unhoverTile);
+}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~PROFILE FADE IN~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -66,6 +89,7 @@ const appearOnScroll = new IntersectionObserver(
       } else {
         entry.target.classList.add("appear");
         appearOnScroll.unobserve(entry.target);
+        setTimeout(() => (entry.target.style.transition = "0.25s"), 500);
       }
     }
   },
