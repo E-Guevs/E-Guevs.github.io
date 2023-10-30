@@ -9,7 +9,10 @@ const websiteName = document.getElementById("website-name"),
   profileContainer = document.getElementById("profile-container"),
   aboutMe = document.getElementById("about-me"),
   aboutMeParagraphs = document.getElementsByClassName("about-me-paragraph"),
-  projectTiles = document.getElementsByClassName("project-tile");
+  projectTiles = document.getElementsByClassName("project-tile"),
+  getDate = new Date(),
+  currentYear = getDate.getFullYear(),
+  copyright = document.getElementById("copyright");
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~WEBSITE NAME~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -98,3 +101,7 @@ const appearOnScroll = new IntersectionObserver(
 
 for (let slider of sliders) slideOnScroll.observe(slider);
 for (let contactSlider of contactSliders) appearOnScroll.observe(contactSlider);
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~COPYRIGHT~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+copyright.innerText = `© ${currentYear} GuevsDev`;
