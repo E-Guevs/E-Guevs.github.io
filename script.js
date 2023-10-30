@@ -10,9 +10,9 @@ const websiteName = document.getElementById("website-name"),
   aboutMe = document.getElementById("about-me"),
   aboutMeParagraphs = document.getElementsByClassName("about-me-paragraph"),
   projectTiles = document.getElementsByClassName("project-tile"),
+  copyright = document.getElementById("copyright"),
   getDate = new Date(),
-  currentYear = getDate.getFullYear(),
-  copyright = document.getElementById("copyright");
+  currentYear = getDate.getFullYear();
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~WEBSITE NAME~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
