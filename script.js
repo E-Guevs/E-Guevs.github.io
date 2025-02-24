@@ -16,7 +16,7 @@ const websiteName = document.getElementById("website-name"),
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~WEBSITE NAME~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-websiteName.innerText = "<GuevsDev/>";
+websiteName.innerText = "<E-Guevs/>";
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~NAV LIST MOBILE INTERACTION~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
