@@ -31,8 +31,8 @@ body {
 	--color-peach: #f0bd9a;
 	--color-peach-navigation: peachpuff;
 
-	--profile-max-width: 1200px;
-	--skills-projects-max-width: 1300px;
+	--max-width-default: 1300px;
+	--max-width-profile: 1200px;
 	--pic-dimension: min(100%, 200px);
 	--scale-zoom: scale(1.25);
 	--text-shadow-default: 0.05rem 0.05rem 0.05rem black;
@@ -79,9 +79,9 @@ p {
 	font-weight: 200;
 }
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~NAVBAR~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~HEADER~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-#navbar {
+header {
 	display: flex;
 	padding: 0 2rem;
 	width: 100%;
@@ -89,11 +89,20 @@ p {
 	position: fixed;
 	top: 0;
 	left: 0;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	background: var(--color-green-gradient-reverse);
 	box-shadow: 0 0.1em 0px rgba(0, 0, 0, 0.5);
 	z-index: 2;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~NAVBAR~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+#navbar {
+	display: flex;
+	width: min(100%, var(--max-width-default));
+	justify-content: space-between;
+	align-items: center;
 }
 
 #website-name {
@@ -223,7 +232,7 @@ p {
 #profile-container {
 	display: grid;
 	margin: 0 auto 1.5rem auto;
-	max-width: var(--profile-max-width);
+	max-width: var(--max-width-profile);
 	align-items: center;
 }
 
@@ -269,11 +278,11 @@ p {
 
 #about-me {
 	margin-bottom: 1rem;
-	max-width: var(--profile-max-width);
+	max-width: var(--max-width-profile);
 }
 
 .about-me-paragraph {
-	max-width: var(--profile-max-width);
+	max-width: var(--max-width-profile);
 }
 
 .about-me-paragraph:not(:last-of-type) {
@@ -304,7 +313,7 @@ p {
 #skills h2 {
 	margin-bottom: 1rem;
 	padding-bottom: 0.5em;
-	max-width: var(--skills-projects-max-width);
+	max-width: var(--max-width-default);
 	border-bottom: 1px solid ghostwhite;
 }
 
@@ -313,7 +322,7 @@ p {
 	display: flex;
 	flex-direction: row;
 	margin: auto;
-	max-width: var(--skills-projects-max-width);
+	max-width: var(--max-width-default);
 	justify-content: center;
 	flex-wrap: wrap;
 }
@@ -339,7 +348,7 @@ p {
 #projects h2 {
 	margin-bottom: 1.5em;
 	padding-bottom: 0.5em;
-	max-width: var(--skills-projects-max-width);
+	max-width: var(--max-width-default);
 	border-bottom: 1px solid ghostwhite;
 }
 
@@ -347,7 +356,7 @@ p {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	grid-gap: 2.5rem;
-	max-width: var(--skills-projects-max-width);
+	max-width: var(--max-width-default);
 	margin: auto;
 	justify-items: center;
 	text-align: left;
@@ -467,7 +476,9 @@ p {
 	transform: scale(1.1);
 }
 
-#footer {
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~FOOTER~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+footer {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -601,7 +612,7 @@ p {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~MEDIA (MIN-WIDTH: 700px)~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 @media (min-width: 700px) {
-	#navbar {
+	header {
 		height: 3.5rem;
 	}
 
