@@ -35,6 +35,9 @@ body {
 	--skills-projects-max-width: 1300px;
 	--pic-dimension: min(100%, 200px);
 	--scale-zoom: scale(1.25);
+	--text-shadow-default: 0.05rem 0.05rem 0.05rem black;
+	--text-shadow-website-name: 0.1rem 0.1rem 0.1rem black;
+	--text-shadow-contact-link: 0.1em 0.1em 0.1em black;
 
 	--transition: 0.25s;
 	--transition-profile: 1s;
@@ -97,7 +100,7 @@ p {
 	font-family: Consolas;
 	font-size: 1.5rem;
 	font-weight: bold;
-	text-shadow: 0.1rem 0.1rem 0.1rem black;
+	text-shadow: var(--text-shadow-website-name);
 	user-select: none;
 }
 
@@ -160,8 +163,9 @@ p {
 	padding: 0 0.25rem;
 	font-size: 1.2rem;
 	text-transform: uppercase;
-	transition: var(--transition);
 	border-radius: 0.25rem;
+	text-shadow: var(--text-shadow-default);
+	transition: var(--transition);
 	user-select: none;
 }
 
@@ -181,6 +185,7 @@ p {
 	border-bottom: 2px solid var(--color-peach-navigation);
 	transform: scale(0);
 	transform-origin: bottom center;
+	box-shadow: 0 0.05rem 0 black;
 	transition: var(--transition);
 }
 
@@ -282,8 +287,8 @@ p {
 }
 
 .fader {
-	transition: var(--transition-profile);
 	opacity: 0;
+	transition: var(--transition-profile);
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~SKILLS~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -453,7 +458,7 @@ p {
 	margin: 2vh;
 	font-family: "Ubuntu", sans-serif;
 	font-size: 1.5rem;
-	text-shadow: 0.1em 0.1em 0.1em black;
+	text-shadow: var(--text-shadow-contact-link);
 	transition: var(--transition);
 }
 
@@ -476,6 +481,7 @@ p {
 #copyright {
 	margin: 0;
 	font-size: 0.8rem;
+	text-shadow: var(--text-shadow-default);
 	user-select: none;
 }
 
